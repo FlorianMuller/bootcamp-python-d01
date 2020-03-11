@@ -1,4 +1,5 @@
-from datetime import datetime, RECIPE_TYPE_LST
+from datetime import datetime
+from recipe import Recipe, RECIPE_TYPE_LST
 
 
 class BookException(Exception):
@@ -19,16 +20,18 @@ class Book:
 
     def add_recipe(self, recipe):
         """Add a recipe to the book and update last_update"""
+        if not isinstance(recipe, Recipe):
+            raise BookException("Not a Recipe")
         self.recipes_list[recipe.recipe_type][recipe.name] = recipe
         self.last_update = datetime.now()
 
     def get_recipe_by_name(self, name):
         """Print a recipe with the name `name` and return the instance"""
         for recipe_type in RECIPE_TYPE_LST:
-            if self.recipes_list[recipe_type][name]:
+            if name in self.recipes_list[recipe_type]:
                 print(self.recipes_list[recipe_type][name])
                 return self.recipes_list[recipe_type][name]
-        raise BookException(f"No recipe with the name {name}")
+        raise BookException(f"No recipe with the name \"{name}\"")
 
     def get_recipes_by_types(self, recipe_type):
         """Get all recipe names for a given recipe_type """
