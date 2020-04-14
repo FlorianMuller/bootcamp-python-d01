@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/goinfre/fmuller/miniconda3/bin/python",
+    "python.pythonPath": "/Users/fmuller/miniconda3/bin/python",
     "python.linting.pylintEnabled": false,
     "python.linting.pycodestyleEnabled": true,
     "python.linting.enabled": true
