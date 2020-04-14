@@ -27,7 +27,7 @@ class Lannister(GotCharacter):
         self.is_alive = False
 
 
-if __name__ == "__main__":    
+if __name__ == "__main__":
     cersei = Lannister("Cersei")
     print(cersei.__dict__)
 

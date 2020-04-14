@@ -76,7 +76,7 @@ def test_book():
     grand_ma = Book("Grandma recipe collection")
     print(grand_ma.__dict__, end="\n\n")
 
-    # Addin recipes
+    # Adding recipes
     time.sleep(.5)
     grand_ma.add_recipe(Recipe("Chocolate cake", 2, 45, ["chocolate",
                                "flavour"], "dessert"))
